@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DrawerContent /> renders correctly when closed 1`] = `
+<div
+  className="DrawerContent"
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  style={
+    Object {
+      "backgroundColor": "green",
+      "bottom": 0,
+      "left": "-80%",
+      "overflow": "scroll",
+      "position": "fixed",
+      "top": 0,
+      "transform": "translateX(0%)",
+      "transition": "transform .2s ease-in-out",
+      "width": "80%",
+      "zIndex": 1,
+    }
+  }
+>
+  <div />
+</div>
+`;
+
+exports[`<DrawerContent /> renders correctly when swiping 1`] = `
+<div
+  className="DrawerContent"
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  style={
+    Object {
+      "backgroundColor": "green",
+      "bottom": 0,
+      "left": "-80%",
+      "overflow": "scroll",
+      "position": "fixed",
+      "top": 0,
+      "transform": "translateX(50%)",
+      "transition": "",
+      "width": "80%",
+      "zIndex": 1,
+    }
+  }
+>
+  <div />
+</div>
+`;

@@ -1,0 +1,25 @@
+{
+  "projectName": "react-swipeable-drawer",
+  "projectOwner": "damusnet",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "damusnet",
+      "name": "Damien Varron",
+      "avatar_url": "https://avatars.githubusercontent.com/u/433409",
+      "profile": "https://github.com/damusnet",
+      "contributions": [
+        "code",
+        "doc",
+        "infra",
+        "test",
+        "ideas",
+        "tool"
+      ]
+    }
+  ]
+}
