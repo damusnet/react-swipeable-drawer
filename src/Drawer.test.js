@@ -1,137 +1,146 @@
 import React from "react";
-import renderer from "react-test-renderer";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import Drawer from "./Drawer";
 
-jest.mock("./DrawerOverlay", () => "DrawerOverlay");
-jest.mock("./DrawerContent", () => "DrawerContent");
+const noop = () => <div />;
 
 describe("<Drawer />", () => {
   it("toggles open", () => {
-    const component = renderer.create(
+    const drawer = shallow(
       <Drawer width={80} content={<div />}>
-        <div />
+        {noop}
       </Drawer>
-    );
-    let tree = component.toJSON();
-    tree.children[0].children[0].props.toggleDrawer();
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    ).instance();
+
+    drawer.toggleDrawer();
+
+    expect(drawer.state.translateX).toEqual(100);
   });
 
   it("toggles close", () => {
-    const component = renderer.create(
+    const drawer = shallow(
       <Drawer width={80} content={<div />}>
-        <div />
+        {noop}
       </Drawer>
-    );
-    let tree = component.toJSON();
-    tree.children[0].children[0].props.toggleDrawer();
-    tree.children[0].children[0].props.toggleDrawer();
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    ).instance();
+
+    drawer.toggleDrawer();
+    drawer.toggleDrawer();
+
+    expect(drawer.state.translateX).toEqual(0);
   });
 
   it("swipes horizontally", () => {
-    const component = renderer.create(
+    const drawer = shallow(
       <Drawer width={80} content={<div />}>
-        <div />
+        {noop}
       </Drawer>
-    );
-    let tree = component.toJSON();
-    tree.children[0].children[0].props.handleTouchStart({
+    ).instance();
+
+    drawer.handleTouchStart({
       targetTouches: [{ clientX: 100, clientY: 100 }],
     });
-    tree.children[0].children[0].props.handleTouchMove(80)({
-      targetTouches: [{ clientX: 200, clientY: 100 }],
+
+    drawer.handleTouchMove(80)({
+      targetTouches: [{ clientX: 900, clientY: 100 }],
     });
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(drawer.state.translateX).toEqual(100);
   });
 
   it("swipes vertically", () => {
-    const component = renderer.create(
+    const drawer = shallow(
       <Drawer width={80} content={<div />}>
-        <div />
+        {noop}
       </Drawer>
-    );
-    let tree = component.toJSON();
-    tree.children[0].children[0].props.handleTouchStart({
+    ).instance();
+
+    drawer.handleTouchStart({
       targetTouches: [{ clientX: 100, clientY: 100 }],
     });
-    tree.children[0].children[0].props.handleTouchMove(80)({
-      targetTouches: [{ clientX: 100, clientY: 200 }],
+
+    drawer.handleTouchMove(80)({
+      targetTouches: [{ clientX: 100, clientY: 900 }],
     });
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(drawer.state.translateX).toEqual(0);
   });
 
   it("closes when swiping a little", () => {
-    const component = renderer.create(
+    const drawer = shallow(
       <Drawer width={80} content={<div />}>
-        <div />
+        {noop}
       </Drawer>
-    );
-    let tree = component.toJSON();
-    tree.children[0].children[0].props.handleTouchStart({
+    ).instance();
+
+    drawer.handleTouchStart({
       targetTouches: [{ clientX: 100, clientY: 100 }],
     });
-    tree.children[0].children[0].props.handleTouchMove(80)({
+
+    drawer.handleTouchMove(80)({
       targetTouches: [{ clientX: 200, clientY: 100 }],
     });
-    tree.children[0].children[0].props.handleTouchEnd();
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    drawer.handleTouchEnd();
+
+    expect(drawer.state.translateX).toEqual(0);
   });
 
   it("opens when swiping enough", () => {
-    const component = renderer.create(
+    const drawer = shallow(
       <Drawer width={80} content={<div />}>
-        <div />
+        {noop}
       </Drawer>
-    );
-    let tree = component.toJSON();
-    tree.children[0].children[0].props.handleTouchStart({
+    ).instance();
+
+    drawer.handleTouchStart({
       targetTouches: [{ clientX: 100, clientY: 100 }],
     });
-    tree.children[0].children[0].props.handleTouchMove(80)({
+
+    drawer.handleTouchMove(80)({
       targetTouches: [{ clientX: 500, clientY: 100 }],
     });
-    tree.children[0].children[0].props.handleTouchEnd();
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    drawer.handleTouchEnd();
+
+    expect(drawer.state.translateX).toEqual(100);
   });
 
   it("watches scroll events", () => {
-    const wrapper = shallow(
+    global.addEventListener = jest.fn();
+
+    const drawer = mount(
       <Drawer width={80} content={<div />}>
-        <div />
+        {noop}
       </Drawer>
-    );
-    const instance = wrapper.instance();
+    ).instance();
 
     window.pageYOffset = 100;
-    instance.onScroll();
-    expect(instance.mainContentScroll).toEqual(100);
+    drawer.onScroll();
 
-    instance.toggleDrawer();
+    expect(drawer.mainContentScroll).toEqual(100);
+
+    drawer.toggleDrawer();
     window.pageYOffset = 0;
-    instance.onScroll();
-    expect(instance.mainContentScroll).toEqual(100);
+    drawer.onScroll();
+
+    expect(drawer.mainContentScroll).toEqual(100);
+
+    expect(global.addEventListener).toHaveBeenCalledTimes(2);
   });
 
   it("removes the scroll event listener", () => {
     global.removeEventListener = jest.fn();
 
-    const wrapper = shallow(
+    const drawer = shallow(
       <Drawer width={80} content={<div />}>
-        <div />
+        {noop}
       </Drawer>
-    );
-    const instance = wrapper.instance();
+    ).instance();
 
-    instance.componentWillUnmount();
+    drawer.componentWillUnmount();
+
     expect(global.removeEventListener).toHaveBeenCalledTimes(1);
   });
 });
