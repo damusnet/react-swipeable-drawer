@@ -21,8 +21,6 @@ const DrawerOverlay = ({
 }) => (
   <div
     className="DrawerOverlay"
-    role="menuitem"
-    tabIndex={0}
     onClick={open ? toggleDrawer : null}
     onTouchStart={handleTouchStart}
     onTouchMove={handleTouchMove(100)}
