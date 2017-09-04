@@ -8,10 +8,8 @@ exports[`<DrawerContent /> renders correctly when closed 1`] = `
   onTouchStart={[Function]}
   style={
     Object {
-      "backgroundColor": "green",
       "bottom": 0,
       "left": "-80%",
-      "overflow": "scroll",
       "position": "fixed",
       "top": 0,
       "transform": "translateX(0%)",
@@ -33,10 +31,8 @@ exports[`<DrawerContent /> renders correctly when swiping 1`] = `
   onTouchStart={[Function]}
   style={
     Object {
-      "backgroundColor": "green",
       "bottom": 0,
       "left": "-80%",
-      "overflow": "scroll",
       "position": "fixed",
       "top": 0,
       "transform": "translateX(50%)",

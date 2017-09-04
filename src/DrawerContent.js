@@ -20,12 +20,10 @@ const DrawerContent = ({
       top: 0,
       bottom: 0,
       zIndex: 1,
-      backgroundColor: "green",
       left: `-${width}%`,
       width: `${width}%`,
       transform: `translateX(${translateX}%)`,
       transition: swiping ? "" : "transform .2s ease-in-out",
-      overflow: "scroll",
     }}
   >
     {drawerContent}
