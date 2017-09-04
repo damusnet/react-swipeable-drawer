@@ -1,0 +1,27 @@
+.DrawerContent {
+  background-color: white;
+  height: 100%;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.DrawerContent-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.DrawerContent-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
