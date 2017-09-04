@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const DrawerContent = ({
+const DrawerContentContainer = ({
   width,
   swiping,
   translateX,
@@ -11,7 +11,7 @@ const DrawerContent = ({
   drawerContent,
 }) => (
   <div
-    className="DrawerContent"
+    className="DrawerContentContainer"
     onTouchStart={handleTouchStart}
     onTouchMove={handleTouchMove(width)}
     onTouchEnd={handleTouchEnd}
@@ -30,9 +30,9 @@ const DrawerContent = ({
   </div>
 );
 
-export default DrawerContent;
+export default DrawerContentContainer;
 
-DrawerContent.propTypes = {
+DrawerContentContainer.propTypes = {
   width: PropTypes.number.isRequired,
   swiping: PropTypes.bool.isRequired,
   translateX: PropTypes.number.isRequired,

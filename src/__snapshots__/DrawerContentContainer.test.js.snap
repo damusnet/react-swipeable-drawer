@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DrawerContent /> renders correctly when closed 1`] = `
+exports[`<DrawerContentContainer /> renders correctly when closed 1`] = `
 <div
-  className="DrawerContent"
+  className="DrawerContentContainer"
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
@@ -23,9 +23,9 @@ exports[`<DrawerContent /> renders correctly when closed 1`] = `
 </div>
 `;
 
-exports[`<DrawerContent /> renders correctly when swiping 1`] = `
+exports[`<DrawerContentContainer /> renders correctly when swiping 1`] = `
 <div
-  className="DrawerContent"
+  className="DrawerContentContainer"
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}

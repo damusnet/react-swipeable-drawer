@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DrawerContainer /> renders correctly 1`] = `
+<div
+  className="DrawerContainer"
+>
+  <div
+    className="DrawerOverlay"
+    onClick={null}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "backgroundColor": "rgba(0,0,0,0)",
+        "bottom": 0,
+        "position": "fixed",
+        "top": 0,
+        "transition": "background-color .2s ease-in-out, width 0s .2s",
+        "width": "20px",
+        "zIndex": 1,
+      }
+    }
+  />
+  <div
+    className="DrawerContentContainer"
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "bottom": 0,
+        "left": "-80%",
+        "position": "fixed",
+        "top": 0,
+        "transform": "translateX(0%)",
+        "transition": "transform .2s ease-in-out",
+        "width": "80%",
+        "zIndex": 1,
+      }
+    }
+  >
+    <div />
+  </div>
+</div>
+`;

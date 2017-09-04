@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainContentContainer /> renders correctly when closed 1`] = `
+<div
+  className="MainContentContainer"
+  style={Object {}}
+>
+  <div />
+</div>
+`;
+
+exports[`<MainContentContainer /> renders correctly when swiping 1`] = `
+<div
+  className="MainContentContainer"
+  style={
+    Object {
+      "position": "fixed",
+      "top": -100,
+    }
+  }
+>
+  <div />
+</div>
+`;

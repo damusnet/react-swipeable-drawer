@@ -1,14 +1,10 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import PropTypes from "prop-types";
-
-import DrawerOverlay from "./DrawerOverlay";
-import DrawerContent from "./DrawerContent";
 
 class Drawer extends Component {
   static propTypes = {
     width: PropTypes.number.isRequired,
-    content: PropTypes.element.isRequired,
-    children: PropTypes.element.isRequired,
+    children: PropTypes.func.isRequired,
   };
 
   state = {
@@ -92,48 +88,25 @@ class Drawer extends Component {
   };
 
   render() {
-    const { width, content: drawerContent, children } = this.props;
+    const { width, children } = this.props;
     const { swiping, translateX } = this.state;
 
-    const open = translateX > 0;
-
-    const mainContentOpenStyle = {
-      position: "fixed",
-      top: -this.mainContentScroll,
-    };
-
-    const mainContent = React.cloneElement(children, {
+    return children({
+      width,
+      swiping,
+      translateX,
+      mainContentScroll: this.mainContentScroll,
       toggleDrawer: this.toggleDrawer,
-      style: open ? mainContentOpenStyle : {},
+      handleTouchStart: this.handleTouchStart,
+      handleTouchMove: this.handleTouchMove,
+      handleTouchEnd: this.handleTouchEnd,
     });
-
-    return (
-      <div>
-        <div className="DrawerContainer">
-          <DrawerOverlay
-            open={open}
-            swiping={swiping}
-            translateX={translateX}
-            toggleDrawer={this.toggleDrawer}
-            handleTouchStart={this.handleTouchStart}
-            handleTouchMove={this.handleTouchMove}
-            handleTouchEnd={this.handleTouchEnd}
-          />
-          <DrawerContent
-            width={width}
-            swiping={swiping}
-            translateX={translateX}
-            toggleDrawer={this.toggleDrawer}
-            handleTouchStart={this.handleTouchStart}
-            handleTouchMove={this.handleTouchMove}
-            handleTouchEnd={this.handleTouchEnd}
-            drawerContent={drawerContent}
-          />
-        </div>
-        {mainContent}
-      </div>
-    );
   }
 }
 
 export default Drawer;
+
+export { default as DrawerContainer } from "./DrawerContainer";
+export { default as DrawerOverlay } from "./DrawerOverlay";
+export { default as DrawerContentContainer } from "./DrawerContentContainer";
+export { default as MainContentContainer } from "./MainContentContainer";

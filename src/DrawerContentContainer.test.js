@@ -1,14 +1,14 @@
 import React from "react";
 import renderer from "react-test-renderer";
 
-import DrawerContent from "./DrawerContent";
+import DrawerContentContainer from "./DrawerContentContainer";
 
 const noop = () => () => {};
 
-describe("<DrawerContent />", () => {
+describe("<DrawerContentContainer />", () => {
   it("renders correctly when closed", () => {
     const component = renderer.create(
-      <DrawerContent
+      <DrawerContentContainer
         width={80}
         swiping={false}
         translateX={0}
@@ -24,7 +24,7 @@ describe("<DrawerContent />", () => {
 
   it("renders correctly when swiping", () => {
     const component = renderer.create(
-      <DrawerContent
+      <DrawerContentContainer
         width={80}
         swiping
         translateX={50}
