@@ -130,7 +130,7 @@ class Drawer extends Component {
             drawerContent={drawerContent}
           />
         </div>
-        <div>{mainContent}</div>
+        {mainContent}
       </div>
     );
   }

@@ -25,12 +25,10 @@ exports[`<Drawer /> closes when swiping a little 1`] = `
       width={80}
     />
   </div>
-  <div>
-    <div
-      style={Object {}}
-      toggleDrawer={[Function]}
-    />
-  </div>
+  <div
+    style={Object {}}
+    toggleDrawer={[Function]}
+  />
 </div>
 `;
 
@@ -59,17 +57,15 @@ exports[`<Drawer /> opens when swiping enough 1`] = `
       width={80}
     />
   </div>
-  <div>
-    <div
-      style={
-        Object {
-          "position": "fixed",
-          "top": -0,
-        }
+  <div
+    style={
+      Object {
+        "position": "fixed",
+        "top": -0,
       }
-      toggleDrawer={[Function]}
-    />
-  </div>
+    }
+    toggleDrawer={[Function]}
+  />
 </div>
 `;
 
@@ -98,17 +94,15 @@ exports[`<Drawer /> swipes horizontally 1`] = `
       width={80}
     />
   </div>
-  <div>
-    <div
-      style={
-        Object {
-          "position": "fixed",
-          "top": -0,
-        }
+  <div
+    style={
+      Object {
+        "position": "fixed",
+        "top": -0,
       }
-      toggleDrawer={[Function]}
-    />
-  </div>
+    }
+    toggleDrawer={[Function]}
+  />
 </div>
 `;
 
@@ -137,12 +131,10 @@ exports[`<Drawer /> swipes vertically 1`] = `
       width={80}
     />
   </div>
-  <div>
-    <div
-      style={Object {}}
-      toggleDrawer={[Function]}
-    />
-  </div>
+  <div
+    style={Object {}}
+    toggleDrawer={[Function]}
+  />
 </div>
 `;
 
@@ -171,12 +163,10 @@ exports[`<Drawer /> toggles close 1`] = `
       width={80}
     />
   </div>
-  <div>
-    <div
-      style={Object {}}
-      toggleDrawer={[Function]}
-    />
-  </div>
+  <div
+    style={Object {}}
+    toggleDrawer={[Function]}
+  />
 </div>
 `;
 
@@ -205,16 +195,14 @@ exports[`<Drawer /> toggles open 1`] = `
       width={80}
     />
   </div>
-  <div>
-    <div
-      style={
-        Object {
-          "position": "fixed",
-          "top": -0,
-        }
+  <div
+    style={
+      Object {
+        "position": "fixed",
+        "top": -0,
       }
-      toggleDrawer={[Function]}
-    />
-  </div>
+    }
+    toggleDrawer={[Function]}
+  />
 </div>
 `;
