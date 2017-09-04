@@ -12,7 +12,8 @@
         ]
       }
     ],
-    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }]
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
+    "jsx-a11y/no-static-element-interactions": "off"
   },
   "globals": {
     "window": true
