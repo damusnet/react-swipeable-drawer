@@ -8,25 +8,32 @@
  
 [![Build Status][build-badge]][build]
 [![Code Coverage][coverage-badge]][coverage]
-[![version][version-badge]][package]
 [![downloads][downloads-badge]][npmcharts]
+[![version][version-badge]][package]
 [![MIT License][license-badge]][LICENSE]
- 
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome][prs-badge]][prs]
 [![Code of Conduct][coc-badge]][coc]
- 
+
+[![size][size-badge]][unpkg-dist]
+[![gzip size][gzip-badge]][unpkg-dist]
+[![module formats: umd, cjs, and es][module-formats-badge]][unpkg-dist]
+
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
 [![Tweet][twitter-badge]][twitter]
  
 ## The problem
  
-// TODO
+Every time I see a hamburger menu and a drawer, I try to swipe it open.
  
 ## This solution
  
-// TODO
+A tiny react library, with no dependencies, that relies mostly on css transforms.
+
+![demo](./other/demo.gif)
+
  
 ## Installation
  
@@ -41,13 +48,50 @@ npm install --save react-swipeable-drawer
 > those installed as well.
  
 ## Usage
+
+See the complete [example](./examples).
  
-// TODO
- 
-## Inspiration
- 
-// TODO
- 
+Wrap your `MainContent` component in the `Drawer` component:
+
+```jsx
+import Drawer from "react-swipeable-drawer";
+
+import DrawerContent from "./DrawerContent";
+import MainContent from "./MainContent";
+
+const App = () => (
+  <Drawer width={80} content={<DrawerContent />}>
+    <MainContent />
+  </Drawer>
+);
+
+export default App;
+```
+
+In your `MainContent` component, use the `style` and `toggleDrawer` props:
+
+```jsx
+const MainContent = ({ style, toggleDrawer }) => (
+  // It is very important to apply the style prop to your content,
+  // otherwise it will still be able to scroll when the drawer is open
+  <div className="App" style={{ ...style }}>
+    You main content goes here...
+    <button onClick={toggleDrawer}>Toggle Drawer</button>
+  </div>
+)
+
+export default MainContent;
+```
+
+### Props
+
+  - `width` (integer): width in percent (%) of the drawer
+  - `content` (component): a react component with the content of your drawer
+
+## Known limitations
+
+Due to the fact that Safari on iOS interprets a swipe from the left as a navigation to the previous page, you will not be able to swipe the drawer open. The `toggleDrawer` function should still work though.
+
 ## Other Solutions
  
 - [`react-motion-drawer`](https://github.com/stoeffel/react-motion-drawer)
@@ -97,3 +141,7 @@ MIT
 [twitter-badge]: https://img.shields.io/twitter/url/https/github.com/damusnet/react-swipeable-drawer.svg?style=social
 [emojis]: https://github.com/kentcdodds/all-contributors#emoji-key
 [all-contributors]: https://github.com/kentcdodds/all-contributors
+[gzip-badge]: http://img.badgesize.io/https://unpkg.com/react-swipeable-drawer/dist/react-swipeable-drawer.umd.min.js?compression=gzip&label=gzip%20size&style=flat-square
+[size-badge]: http://img.badgesize.io/https://unpkg.com/react-swipeable-drawer/dist/react-swipeable-drawer.umd.min.js?label=size&style=flat-square
+[unpkg-dist]: https://unpkg.com/react-swipeable-drawer/dist/
+[module-formats-badge]: https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20es-green.svg?style=flat-square
