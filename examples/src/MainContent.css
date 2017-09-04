@@ -1,0 +1,22 @@
+.MainContent {
+  padding-top: 60px;
+}
+
+.MainContent-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #009cde;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-Shadow: 0 0 4px 0 rgba(0, 0, 0, 0.12), 0 4px 4px 0 rgba(0, 0, 0, 0.24);
+}
+
+.MainContent-navbar-title {
+  font-size: 20px;
+  padding-left: 20px;
+  color: white;
+}
