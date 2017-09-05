@@ -51,42 +51,61 @@ npm install --save react-swipeable-drawer
 
 See the complete [example](./examples).
  
-Wrap your `MainContent` component in the `Drawer` component:
+`react-swipeable-drawer` allows to either use the built-in components out of the box, or to roll your own. Here is a basic example with everything included but no room for customization:
 
 ```jsx
-import Drawer from "react-swipeable-drawer";
+import React from "react";
+
+import Drawer, {
+  DrawerContainer,
+  MainContentContainer,
+} from "react-swipeable-drawer";
 
 import DrawerContent from "./DrawerContent";
 import MainContent from "./MainContent";
 
 const App = () => (
-  <Drawer width={80} content={<DrawerContent />}>
-    <MainContent />
+  <Drawer width={80}>
+    {({
+      width,
+      swiping,
+      translateX,
+      mainContentScroll,
+      toggleDrawer,
+      handleTouchStart,
+      handleTouchMove,
+      handleTouchEnd,
+    }) => (
+      <div>
+        <DrawerContainer
+          width={width}
+          swiping={swiping}
+          translateX={translateX}
+          toggleDrawer={toggleDrawer}
+          handleTouchStart={handleTouchStart}
+          handleTouchMove={handleTouchMove}
+          handleTouchEnd={handleTouchEnd}
+          drawerContent={<DrawerContent />}
+        />
+        <MainContentContainer
+          translateX={translateX}
+          mainContentScroll={mainContentScroll}
+        >
+          <MainContent />
+        </MainContentContainer>
+      </div>
+    )}
   </Drawer>
 );
 
 export default App;
 ```
 
-In your `MainContent` component, use the `style` and `toggleDrawer` props:
-
-```jsx
-const MainContent = ({ style, toggleDrawer }) => (
-  // It is very important to apply the style prop to your content,
-  // otherwise it will still be able to scroll when the drawer is open
-  <div className="App" style={{ ...style }}>
-    You main content goes here...
-    <button onClick={toggleDrawer}>Toggle Drawer</button>
-  </div>
-)
-
-export default MainContent;
-```
+Alternatively, you can look at the code for [`<DrawerOverlay />`](./src/DrawerOverlay.js) and [`<DrawerContentContainer />`](./src/DrawerContentContainer.js) and copy/paste it in place of `<DrawerContainer />` to make your own customizations. Same thing for [`<MainContentContainer />`](./src/MainContentContainer.js).
 
 ### Props
 
   - `width` (integer): width in percent (%) of the drawer
-  - `content` (component): a react component with the content of your drawer
 
 ## Known limitations
 
