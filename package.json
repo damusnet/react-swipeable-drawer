@@ -2,7 +2,9 @@
   "name": "react-swipeable-drawer",
   "version": "0.0.0-semantically-released",
   "description": "A swipeable drawer for the mobile web",
-  "main": "dist/index.js",
+  "main": "dist/react-swipeable-drawer.cjs.js",
+  "jsnext:main": "dist/react-swipeable-drawer.es.js",
+  "module": "dist/react-swipeable-drawer.es.js",
   "engines": {
     "node": "> 4",
     "npm": "> 3"
