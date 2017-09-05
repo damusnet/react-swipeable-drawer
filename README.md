@@ -8,11 +8,12 @@
  
 [![Build Status][build-badge]][build]
 [![Code Coverage][coverage-badge]][coverage]
+[![Greenkeeper badge][greenkeeper-badge]](https://greenkeeper.io/)
 [![downloads][downloads-badge]][npmcharts]
 [![version][version-badge]][package]
 [![MIT License][license-badge]][LICENSE]
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors][contributors-badge]](#contributors)
 [![PRs Welcome][prs-badge]][prs]
 [![Code of Conduct][coc-badge]][coc]
 
@@ -137,20 +138,22 @@ MIT
  
 [npm]: https://www.npmjs.com/
 [node]: https://nodejs.org
-[build-badge]: https://img.shields.io/travis/damusnet/react-swipeable-drawer.svg?style=flat-square
+[build-badge]: https://img.shields.io/travis/damusnet/react-swipeable-drawer.svg?style=plastic
 [build]: https://travis-ci.org/damusnet/react-swipeable-drawer
-[coverage-badge]: https://img.shields.io/codecov/c/github/damusnet/react-swipeable-drawer.svg?style=flat-square
+[coverage-badge]: https://img.shields.io/codecov/c/github/damusnet/react-swipeable-drawer.svg?style=plastic
 [coverage]: https://codecov.io/github/damusnet/react-swipeable-drawer
-[version-badge]: https://img.shields.io/npm/v/react-swipeable-drawer.svg?style=flat-square
+[greenkeeper-badge]: https://badges.greenkeeper.io/damusnet/react-swipeable-drawer.svg
+[version-badge]: https://img.shields.io/npm/v/react-swipeable-drawer.svg?style=plastic
 [package]: https://www.npmjs.com/package/react-swipeable-drawer
-[downloads-badge]: https://img.shields.io/npm/dm/react-swipeable-drawer.svg?style=flat-square
+[downloads-badge]: https://img.shields.io/npm/dm/react-swipeable-drawer.svg?style=plastic
 [npmcharts]: http://npmcharts.com/compare/react-swipeable-drawer
-[license-badge]: https://img.shields.io/npm/l/react-swipeable-drawer.svg?style=flat-square
+[license-badge]: https://img.shields.io/npm/l/react-swipeable-drawer.svg?style=plastic
 [license]: https://github.com/damusnet/react-swipeable-drawer/blob/master/LICENSE
-[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+[contributors-badge]: https://img.shields.io/badge/all_contributors-1-orange.svg?style=plastic
+[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=plastic
 [prs]: http://makeapullrequest.com
-[donate-badge]: https://img.shields.io/badge/$-support-green.svg?style=flat-square
-[coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
+[donate-badge]: https://img.shields.io/badge/$-support-green.svg?style=plastic
+[coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=plastic
 [coc]: https://github.com/damusnet/react-swipeable-drawer/blob/master/other/CODE_OF_CONDUCT.md
 [github-watch-badge]: https://img.shields.io/github/watchers/damusnet/react-swipeable-drawer.svg?style=social
 [github-watch]: https://github.com/damusnet/react-swipeable-drawer/watchers
@@ -160,7 +163,7 @@ MIT
 [twitter-badge]: https://img.shields.io/twitter/url/https/github.com/damusnet/react-swipeable-drawer.svg?style=social
 [emojis]: https://github.com/kentcdodds/all-contributors#emoji-key
 [all-contributors]: https://github.com/kentcdodds/all-contributors
-[gzip-badge]: http://img.badgesize.io/https://unpkg.com/react-swipeable-drawer/dist/react-swipeable-drawer.umd.min.js?compression=gzip&label=gzip%20size&style=flat-square
-[size-badge]: http://img.badgesize.io/https://unpkg.com/react-swipeable-drawer/dist/react-swipeable-drawer.umd.min.js?label=size&style=flat-square
+[gzip-badge]: http://img.badgesize.io/https://unpkg.com/react-swipeable-drawer/dist/react-swipeable-drawer.umd.min.js?compression=gzip&label=gzip%20size&style=plastic
+[size-badge]: http://img.badgesize.io/https://unpkg.com/react-swipeable-drawer/dist/react-swipeable-drawer.umd.min.js?label=size&style=plastic
 [unpkg-dist]: https://unpkg.com/react-swipeable-drawer/dist/
-[module-formats-badge]: https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20es-green.svg?style=flat-square
+[module-formats-badge]: https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20es-green.svg?style=plastic
