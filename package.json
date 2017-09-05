@@ -12,10 +12,11 @@
   "scripts": {
     "start": "nps",
     "test": "nps test",
-    "precommit":
-      "lint-staged && opt --in pre-commit --exec \"npm start validate\""
+    "precommit": "lint-staged && opt --in pre-commit --exec \"npm start validate\""
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "keywords": [],
   "author": "Damien Varron <damien@varron.fr>",
   "license": "MIT",
@@ -27,7 +28,7 @@
     "all-contributors-cli": "^4.3.0",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
-    "babel-jest": "^20.0.3",
+    "babel-jest": "^21.0.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-inline-environment-variables": "^0.2.0",
@@ -44,7 +45,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.14.3",
-    "jest": "^20.0.4",
+    "jest": "^21.0.1",
     "lint-staged": "^4.0.1",
     "nps": "^5.4.0",
     "nps-utils": "^1.2.0",
@@ -64,13 +65,23 @@
     "rollup-watch": "^4.3.1"
   },
   "lint-staged": {
-    "*.js": ["prettier --write", "jest --bail --findRelatedTests", "git add"]
+    "*.js": [
+      "prettier --write",
+      "jest --bail --findRelatedTests",
+      "git add"
+    ]
   },
   "jest": {
     "testEnvironment": "jsdom",
-    "collectCoverageFrom": ["src/**/*.js"],
-    "testPathIgnorePatterns": ["/node_modules/"],
-    "coveragePathIgnorePatterns": ["/node_modules/"],
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 100,
