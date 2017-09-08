@@ -45,7 +45,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.14.3",
-    "jest": "^21.0.1",
+    "jest": "^21.0.2",
     "lint-staged": "^4.0.1",
     "nps": "^5.4.0",
     "nps-utils": "^1.2.0",
