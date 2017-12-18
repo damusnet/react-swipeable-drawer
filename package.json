@@ -28,7 +28,7 @@
     "all-contributors-cli": "^4.3.0",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^8.0.0",
-    "babel-jest": "^21.0.2",
+    "babel-jest": "^22.0.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-inline-environment-variables": "^0.2.0",
