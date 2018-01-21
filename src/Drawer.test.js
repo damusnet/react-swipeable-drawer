@@ -5,6 +5,8 @@ import Drawer from "./Drawer";
 
 const noop = () => <div />;
 
+window.scrollTo = jest.fn();
+
 describe("<Drawer />", () => {
   it("toggles open", () => {
     const drawer = shallow(
@@ -127,7 +129,7 @@ describe("<Drawer />", () => {
 
     expect(drawer.mainContentScroll).toEqual(100);
 
-    expect(global.addEventListener).toHaveBeenCalledTimes(2);
+    expect(global.addEventListener).toHaveBeenCalledTimes(7);
   });
 
   it("removes the scroll event listener", () => {
