@@ -4,32 +4,35 @@ import PropTypes from "prop-types";
 import { DrawerOverlay, DrawerContentContainer } from "./Drawer";
 
 const DrawerContainer = ({
-  width,
+  position,
+  size,
   swiping,
-  translateX,
+  translation,
   toggleDrawer,
   handleTouchStart,
   handleTouchMove,
   handleTouchEnd,
   drawerContent,
 }) => {
-  const open = translateX > 0;
+  const open = translation > 0;
 
   return (
     <div className="DrawerContainer">
       <DrawerOverlay
+        position={position}
         open={open}
         swiping={swiping}
-        translateX={translateX}
+        translation={translation}
         toggleDrawer={toggleDrawer}
         handleTouchStart={handleTouchStart}
         handleTouchMove={handleTouchMove}
         handleTouchEnd={handleTouchEnd}
       />
       <DrawerContentContainer
-        width={width}
+        position={position}
+        size={size}
         swiping={swiping}
-        translateX={translateX}
+        translation={translation}
         toggleDrawer={toggleDrawer}
         handleTouchStart={handleTouchStart}
         handleTouchMove={handleTouchMove}
@@ -43,9 +46,10 @@ const DrawerContainer = ({
 export default DrawerContainer;
 
 DrawerContainer.propTypes = {
-  width: PropTypes.number.isRequired,
+  position: PropTypes.oneOf(["left", "right", "top", "bottom"]).isRequired,
+  size: PropTypes.number.isRequired,
   swiping: PropTypes.bool.isRequired,
-  translateX: PropTypes.number.isRequired,
+  translation: PropTypes.number.isRequired,
   toggleDrawer: PropTypes.func.isRequired,
   handleTouchStart: PropTypes.func.isRequired,
   handleTouchMove: PropTypes.func.isRequired,

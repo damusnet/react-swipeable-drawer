@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const MainContentContainer = ({ translateX, mainContentScroll, children }) => {
+const MainContentContainer = ({ translation, mainContentScroll, children }) => {
   const mainContentOpenStyle =
-    translateX > 0
+    translation > 0
       ? {
           position: "fixed",
           top: -mainContentScroll,
@@ -20,7 +20,7 @@ const MainContentContainer = ({ translateX, mainContentScroll, children }) => {
 export default MainContentContainer;
 
 MainContentContainer.propTypes = {
-  translateX: PropTypes.number.isRequired,
+  translation: PropTypes.number.isRequired,
   mainContentScroll: PropTypes.number.isRequired,
   children: PropTypes.node.isRequired,
 };

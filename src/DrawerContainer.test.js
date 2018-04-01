@@ -9,9 +9,10 @@ describe("<DrawerContainer />", () => {
   it("renders correctly", () => {
     const component = renderer.create(
       <DrawerContainer
-        width={80}
+        position="left"
+        size={80}
         swiping={false}
-        translateX={0}
+        translation={0}
         toggleDrawer={noop}
         handleTouchStart={noop}
         handleTouchMove={noop}

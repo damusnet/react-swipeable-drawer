@@ -24,34 +24,33 @@
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
 [![Tweet][twitter-badge]][twitter]
- 
+
 ## The problem
- 
+
 Every time I see a hamburger menu and a drawer, I try to swipe it open.
- 
+
 ## This solution
- 
+
 A tiny react library, with no dependencies, that relies mostly on css transforms.
 
 ![demo](./other/demo.gif)
 
- 
 ## Installation
- 
+
 This module is distributed via [npm][npm] which is bundled with [node][node] and
 should be installed as one of your project's `dependencies`:
- 
+
 ```
 npm install --save react-swipeable-drawer
 ```
- 
+
 > This package also depends on `react` and `prop-types`. Please make sure you have
 > those installed as well.
- 
+
 ## Usage
 
 See the complete [example](./examples).
- 
+
 `react-swipeable-drawer` allows to either use the built-in components out of the box, or to roll your own. Here is a basic example with everything included but no room for customization:
 
 ```jsx
@@ -66,11 +65,11 @@ import DrawerContent from "./DrawerContent";
 import MainContent from "./MainContent";
 
 const App = () => (
-  <Drawer width={80}>
+  <Drawer size={80}>
     {({
-      width,
+      size,
       swiping,
-      translateX,
+      translation,
       mainContentScroll,
       toggleDrawer,
       handleTouchStart,
@@ -79,9 +78,10 @@ const App = () => (
     }) => (
       <div>
         <DrawerContainer
-          width={width}
+          position="left"
+          size={size}
           swiping={swiping}
-          translateX={translateX}
+          translation={translation}
           toggleDrawer={toggleDrawer}
           handleTouchStart={handleTouchStart}
           handleTouchMove={handleTouchMove}
@@ -89,7 +89,7 @@ const App = () => (
           drawerContent={<DrawerContent />}
         />
         <MainContentContainer
-          translateX={translateX}
+          translation={translation}
           mainContentScroll={mainContentScroll}
         >
           <MainContent />
@@ -106,36 +106,40 @@ Alternatively, you can look at the code for [`<DrawerOverlay />`](./src/DrawerOv
 
 ### Props
 
-  - `width` (integer): width in percent (%) of the drawer
+* `size` (integer): size (width or height) in percent (%) of the drawer
+* `position` (string): one of `left`, `right`, `top` or `bottom`
 
 ## Known limitations
 
 Due to the fact that Safari on iOS interprets a swipe from the left as a navigation to the previous page, you will not be able to swipe the drawer open. The `toggleDrawer` function should still work though.
 
 ## Other Solutions
- 
-- [`react-motion-drawer`](https://github.com/stoeffel/react-motion-drawer)
-- [`react-drawer`](https://github.com/atom2ueki/react-drawer)
-- [`react-md navigation-drawers`](https://react-md.mlaursen.com/components/navigation-drawers)
- 
+
+* [`react-motion-drawer`](https://github.com/stoeffel/react-motion-drawer)
+* [`react-drawer`](https://github.com/atom2ueki/react-drawer)
+* [`react-md navigation-drawers`](https://react-md.mlaursen.com/components/navigation-drawers)
+
 ## Contributors
- 
+
 Thanks goes to these people ([emoji key][emojis]):
- 
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
 | [<img src="https://avatars.githubusercontent.com/u/433409" width="100px;"/><br /><sub>Damien Varron</sub>](https://github.com/damusnet)<br />[💻](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Code") [📖](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Documentation") [🚇](#infra-damusnet "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Tests") [🤔](#ideas-damusnet "Ideas, Planning, & Feedback") [🔧](#tool-damusnet "Tools") |
-| :---: |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
- 
+
 This project follows the [all-contributors][all-contributors] specification.
 Contributions of any kind welcome!
 
 Many thanks also to [Kent C. Dodds](http://kentcdodds.com/) from whom I stole the template for this repo and the build process.
- 
+
 ## LICENSE
- 
+
 MIT
- 
+
 [npm]: https://www.npmjs.com/
 [node]: https://nodejs.org
 [build-badge]: https://img.shields.io/travis/damusnet/react-swipeable-drawer.svg?style=plastic
