@@ -14,9 +14,10 @@ exports[`<DrawerContainer /> renders correctly 1`] = `
       Object {
         "backgroundColor": "rgba(0,0,0,0)",
         "bottom": 0,
+        "left": 0,
         "position": "fixed",
         "top": 0,
-        "transition": "background-color .2s ease-in-out, width 0s .2s",
+        "transition": "background-color .2s ease-in-out, width 0s .2s, height 0s 0s",
         "width": "20px",
         "zIndex": 1,
       }

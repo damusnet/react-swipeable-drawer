@@ -1,6 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DrawerOverlay /> renders correctly when closed 1`] = `
+exports[`<DrawerOverlay /> renders correctly when closed bottom 1`] = `
+<div
+  className="DrawerOverlay"
+  onClick={null}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  style={
+    Object {
+      "backgroundColor": "rgba(0,0,0,0)",
+      "bottom": 0,
+      "height": "20px",
+      "left": 0,
+      "position": "fixed",
+      "right": 0,
+      "transition": "background-color .2s ease-in-out, width 0s .2s, height 0s 0s",
+      "zIndex": 1,
+    }
+  }
+/>
+`;
+
+exports[`<DrawerOverlay /> renders correctly when closed left 1`] = `
+<div
+  className="DrawerOverlay"
+  onClick={null}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  style={
+    Object {
+      "backgroundColor": "rgba(0,0,0,0)",
+      "bottom": 0,
+      "left": 0,
+      "position": "fixed",
+      "top": 0,
+      "transition": "background-color .2s ease-in-out, width 0s .2s, height 0s 0s",
+      "width": "20px",
+      "zIndex": 1,
+    }
+  }
+/>
+`;
+
+exports[`<DrawerOverlay /> renders correctly when closed right 1`] = `
 <div
   className="DrawerOverlay"
   onClick={null}
@@ -12,9 +56,32 @@ exports[`<DrawerOverlay /> renders correctly when closed 1`] = `
       "backgroundColor": "rgba(0,0,0,0)",
       "bottom": 0,
       "position": "fixed",
+      "right": 0,
       "top": 0,
-      "transition": "background-color .2s ease-in-out, width 0s .2s",
+      "transition": "background-color .2s ease-in-out, width 0s .2s, height 0s 0s",
       "width": "20px",
+      "zIndex": 1,
+    }
+  }
+/>
+`;
+
+exports[`<DrawerOverlay /> renders correctly when closed top 1`] = `
+<div
+  className="DrawerOverlay"
+  onClick={null}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  style={
+    Object {
+      "backgroundColor": "rgba(0,0,0,0)",
+      "height": "20px",
+      "left": 0,
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+      "transition": "background-color .2s ease-in-out, width 0s .2s, height 0s 0s",
       "zIndex": 1,
     }
   }
@@ -32,10 +99,77 @@ exports[`<DrawerOverlay /> renders correctly when open 1`] = `
     Object {
       "backgroundColor": "rgba(0,0,0,0.6)",
       "bottom": 0,
+      "left": 0,
       "position": "fixed",
       "top": 0,
-      "transition": "background-color .2s ease-in-out, width 0s 0s",
+      "transition": "background-color .2s ease-in-out, width 0s 0s, height 0s 0s",
       "width": "100%",
+      "zIndex": 1,
+    }
+  }
+/>
+`;
+
+exports[`<DrawerOverlay /> renders correctly when open 2`] = `
+<div
+  className="DrawerOverlay"
+  onClick={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  style={
+    Object {
+      "backgroundColor": "rgba(0,0,0,0.6)",
+      "bottom": 0,
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+      "transition": "background-color .2s ease-in-out, width 0s 0s, height 0s 0s",
+      "width": "100%",
+      "zIndex": 1,
+    }
+  }
+/>
+`;
+
+exports[`<DrawerOverlay /> renders correctly when open 3`] = `
+<div
+  className="DrawerOverlay"
+  onClick={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  style={
+    Object {
+      "backgroundColor": "rgba(0,0,0,0.6)",
+      "height": "100%",
+      "left": 0,
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+      "transition": "background-color .2s ease-in-out, width 0s 0s, height 0s 0s",
+      "zIndex": 1,
+    }
+  }
+/>
+`;
+
+exports[`<DrawerOverlay /> renders correctly when open 4`] = `
+<div
+  className="DrawerOverlay"
+  onClick={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  style={
+    Object {
+      "backgroundColor": "rgba(0,0,0,0.6)",
+      "bottom": 0,
+      "height": "100%",
+      "left": 0,
+      "position": "fixed",
+      "right": 0,
+      "transition": "background-color .2s ease-in-out, width 0s 0s, height 0s 0s",
       "zIndex": 1,
     }
   }
@@ -53,6 +187,7 @@ exports[`<DrawerOverlay /> renders correctly when swiping 1`] = `
     Object {
       "backgroundColor": "rgba(0,0,0,0.3)",
       "bottom": 0,
+      "left": 0,
       "position": "fixed",
       "top": 0,
       "transition": "",

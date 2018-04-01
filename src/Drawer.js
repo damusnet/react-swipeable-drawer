@@ -1,57 +1,64 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
 
+const START_TRANSLATION = -10;
+const STOP_TRANSLATION = 100;
+
 class Drawer extends Component {
   static propTypes = {
-    width: PropTypes.number.isRequired,
+    position: PropTypes.oneOf(["left", "right", "top", "bottom"]).isRequired,
+    size: PropTypes.number.isRequired,
     children: PropTypes.func.isRequired,
   };
 
   state = {
     swiping: false,
     scrolling: false,
-    translateX: 0,
+    translation: START_TRANSLATION,
     clientX: 0,
     clientY: 0,
   };
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.onScroll);
+  componentDidUpdate(prevProps, prevState) {
+    const { translation } = this.state;
+    if (
+      translation !== prevState.translation &&
+      translation === START_TRANSLATION
+    ) {
+      window.scrollTo(0, this.mainContentScroll);
+    }
   }
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.onScroll);
-  }
+  mainContentScroll = 0;
 
-  onScroll = () => {
-    const { translateX } = this.state;
-    if (translateX === 0) {
+  saveScrollPosition = () => {
+    const { translation } = this.state;
+    if (translation === START_TRANSLATION) {
       this.mainContentScroll = window.pageYOffset;
     }
   };
 
-  mainContentScroll = 0;
-
   toggleDrawer = () => {
-    this.setState(
-      ({ translateX }) => ({
-        translateX: translateX > 50 ? 0 : 100,
-      }),
-      this.restoreMainContentScrollPosition
-    );
+    this.saveScrollPosition();
+    this.setState(({ translation }) => ({
+      translation: translation > 50 ? START_TRANSLATION : STOP_TRANSLATION,
+    }));
   };
 
   handleTouchStart = event => {
+    this.saveScrollPosition();
     const { clientX, clientY } = event.targetTouches[0];
     this.setState({ swiping: true, clientX, clientY });
   };
 
-  handleTouchMove = width => event => {
+  handleTouchMove = size => event => {
+    const { position } = this.props;
     const {
       clientX: prevClientX,
       clientY: prevClientY,
       scrolling,
     } = this.state;
+
     const maxWidth = window.innerWidth;
     const { clientX, clientY } = event.targetTouches[0];
 
@@ -60,41 +67,40 @@ class Drawer extends Component {
 
     if (scrolling || diffTranslateY > diffTranslateX) {
       this.setState({ scrolling: true });
+    } else if (position === "right") {
+      this.setState({
+        translation: Math.min(
+          (maxWidth - clientX) / (maxWidth * size / 100) * 100,
+          STOP_TRANSLATION
+        ),
+      });
     } else {
-      const translateX = Math.min(
-        clientX / (maxWidth * width / 100) * 100,
-        100
-      );
-      this.setState({ translateX });
+      this.setState({
+        translation: Math.min(
+          clientX / (maxWidth * size / 100) * 100,
+          STOP_TRANSLATION
+        ),
+      });
     }
   };
 
   handleTouchEnd = () => {
-    this.setState(
-      ({ translateX }) => ({
-        swiping: false,
-        scrolling: false,
-        translateX: translateX < 50 ? 0 : 100,
-      }),
-      this.restoreMainContentScrollPosition
-    );
-  };
-
-  restoreMainContentScrollPosition = () => {
-    const { translateX } = this.state;
-    if (translateX === 0) {
-      window.scrollTo(0, this.mainContentScroll);
-    }
+    this.setState(({ translation }) => ({
+      swiping: false,
+      scrolling: false,
+      translation: translation < 50 ? START_TRANSLATION : STOP_TRANSLATION,
+    }));
   };
 
   render() {
-    const { width, children } = this.props;
-    const { swiping, translateX } = this.state;
+    const { position, size, children } = this.props;
+    const { swiping, translation } = this.state;
 
     return children({
-      width,
+      position,
+      size,
       swiping,
-      translateX,
+      translation,
       mainContentScroll: this.mainContentScroll,
       toggleDrawer: this.toggleDrawer,
       handleTouchStart: this.handleTouchStart,

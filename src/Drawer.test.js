@@ -5,24 +5,22 @@ import Drawer from "./Drawer";
 
 const noop = () => <div />;
 
-window.scrollTo = jest.fn();
-
 describe("<Drawer />", () => {
   it("toggles open", () => {
     const drawer = shallow(
-      <Drawer width={80} content={<div />}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();
 
     drawer.toggleDrawer();
 
-    expect(drawer.state.translateX).toEqual(100);
+    expect(drawer.state.translation).toEqual(100);
   });
 
   it("toggles close", () => {
     const drawer = shallow(
-      <Drawer width={80} content={<div />}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();
@@ -30,12 +28,12 @@ describe("<Drawer />", () => {
     drawer.toggleDrawer();
     drawer.toggleDrawer();
 
-    expect(drawer.state.translateX).toEqual(0);
+    expect(drawer.state.translation).toEqual(-10);
   });
 
   it("swipes horizontally", () => {
     const drawer = shallow(
-      <Drawer width={80} content={<div />}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();
@@ -48,12 +46,12 @@ describe("<Drawer />", () => {
       targetTouches: [{ clientX: 900, clientY: 100 }],
     });
 
-    expect(drawer.state.translateX).toEqual(100);
+    expect(drawer.state.translation).toEqual(100);
   });
 
-  it("swipes vertically", () => {
+  it("scrolls vertically", () => {
     const drawer = shallow(
-      <Drawer width={80} content={<div />}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();
@@ -66,12 +64,18 @@ describe("<Drawer />", () => {
       targetTouches: [{ clientX: 100, clientY: 900 }],
     });
 
-    expect(drawer.state.translateX).toEqual(0);
+    expect(drawer.state.scrolling).toEqual(true);
+
+    drawer.handleTouchMove(80)({
+      targetTouches: [{ clientX: 200, clientY: 900 }],
+    });
+
+    expect(drawer.state.translation).toEqual(-10);
   });
 
   it("closes when swiping a little", () => {
     const drawer = shallow(
-      <Drawer width={80} content={<div />}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();
@@ -86,12 +90,12 @@ describe("<Drawer />", () => {
 
     drawer.handleTouchEnd();
 
-    expect(drawer.state.translateX).toEqual(0);
+    expect(drawer.state.translation).toEqual(-10);
   });
 
-  it("opens when swiping enough", () => {
+  it("opens when swiping enough from left to right", () => {
     const drawer = shallow(
-      <Drawer width={80} content={<div />}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();
@@ -106,43 +110,43 @@ describe("<Drawer />", () => {
 
     drawer.handleTouchEnd();
 
-    expect(drawer.state.translateX).toEqual(100);
+    expect(drawer.state.translation).toEqual(100);
   });
 
-  it("watches scroll events", () => {
-    global.addEventListener = jest.fn();
+  it("opens when swiping enough from right to left", () => {
+    const drawer = shallow(
+      <Drawer size={80} position="right">
+        {noop}
+      </Drawer>
+    ).instance();
+
+    drawer.handleTouchStart({
+      targetTouches: [{ clientX: 500, clientY: 100 }],
+    });
+
+    drawer.handleTouchMove(80)({
+      targetTouches: [{ clientX: 100, clientY: 100 }],
+    });
+
+    drawer.handleTouchEnd();
+
+    expect(drawer.state.translation).toEqual(100);
+  });
+
+  it("resets the window scroll position", () => {
+    window.scrollTo = jest.fn();
+    window.pageYOffset = 100;
 
     const drawer = mount(
-      <Drawer width={80} content={<div />}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();
-
-    window.pageYOffset = 100;
-    drawer.onScroll();
-
-    expect(drawer.mainContentScroll).toEqual(100);
 
     drawer.toggleDrawer();
-    window.pageYOffset = 0;
-    drawer.onScroll();
+    drawer.toggleDrawer();
 
     expect(drawer.mainContentScroll).toEqual(100);
-
-    expect(global.addEventListener).toHaveBeenCalledTimes(7);
-  });
-
-  it("removes the scroll event listener", () => {
-    global.removeEventListener = jest.fn();
-
-    const drawer = shallow(
-      <Drawer width={80} content={<div />}>
-        {noop}
-      </Drawer>
-    ).instance();
-
-    drawer.componentWillUnmount();
-
-    expect(global.removeEventListener).toHaveBeenCalledTimes(1);
+    expect(window.scrollTo).toBeCalledWith(0, 100);
   });
 });

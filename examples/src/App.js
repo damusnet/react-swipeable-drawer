@@ -13,11 +13,12 @@ import Drawer, {
 import DrawerContent from "./DrawerContent";
 
 const App = () => (
-  <Drawer width={80}>
+  <Drawer size={80} position="left">
     {({
-      width,
+      position,
+      size,
       swiping,
-      translateX,
+      translation,
       mainContentScroll,
       toggleDrawer,
       handleTouchStart,
@@ -26,9 +27,10 @@ const App = () => (
     }) => (
       <div>
         <DrawerContainer
-          width={width}
+          position={position}
+          size={size}
           swiping={swiping}
-          translateX={translateX}
+          translation={translation}
           toggleDrawer={toggleDrawer}
           handleTouchStart={handleTouchStart}
           handleTouchMove={handleTouchMove}
@@ -36,7 +38,7 @@ const App = () => (
           drawerContent={<DrawerContent />}
         />
         <MainContentContainer
-          translateX={translateX}
+          translation={translation}
           mainContentScroll={mainContentScroll}
         >
           <div className="MainContent">
