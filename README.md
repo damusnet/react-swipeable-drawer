@@ -65,8 +65,9 @@ import DrawerContent from "./DrawerContent";
 import MainContent from "./MainContent";
 
 const App = () => (
-  <Drawer size={80}>
+  <Drawer position="left" size={80}>
     {({
+      position,
       size,
       swiping,
       translation,
@@ -78,7 +79,7 @@ const App = () => (
     }) => (
       <div>
         <DrawerContainer
-          position="left"
+          position={position}
           size={size}
           swiping={swiping}
           translation={translation}

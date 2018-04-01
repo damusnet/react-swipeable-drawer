@@ -13,7 +13,7 @@ import Drawer, {
 import DrawerContent from "./DrawerContent";
 
 const App = () => (
-  <Drawer size={80} position="left">
+  <Drawer position="left" size={80}>
     {({
       position,
       size,
