@@ -13,10 +13,11 @@ import Drawer, {
 import DrawerContent from "./DrawerContent";
 
 const App = () => (
-  <Drawer position="left" size={80}>
+  <Drawer position="left" size={80} zIndex={1}>
     {({
       position,
       size,
+      zIndex,
       swiping,
       translation,
       mainContentScroll,
@@ -29,6 +30,7 @@ const App = () => (
         <DrawerContainer
           position={position}
           size={size}
+          zIndex={zIndex}
           swiping={swiping}
           translation={translation}
           toggleDrawer={toggleDrawer}

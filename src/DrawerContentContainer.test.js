@@ -11,6 +11,7 @@ describe("<DrawerContentContainer />", () => {
       <DrawerContentContainer
         position="left"
         size={80}
+        zIndex={2}
         swiping={false}
         translation={0}
         handleTouchStart={noop}
@@ -28,6 +29,7 @@ describe("<DrawerContentContainer />", () => {
       <DrawerContentContainer
         position="left"
         size={80}
+        zIndex={2}
         swiping
         translation={50}
         handleTouchStart={noop}
@@ -45,6 +47,7 @@ describe("<DrawerContentContainer />", () => {
       <DrawerContentContainer
         position="right"
         size={80}
+        zIndex={2}
         swiping
         translation={50}
         handleTouchStart={noop}
@@ -62,6 +65,7 @@ describe("<DrawerContentContainer />", () => {
       <DrawerContentContainer
         position="top"
         size={80}
+        zIndex={2}
         swiping
         translation={50}
         handleTouchStart={noop}
@@ -79,6 +83,7 @@ describe("<DrawerContentContainer />", () => {
       <DrawerContentContainer
         position="bottom"
         size={80}
+        zIndex={2}
         swiping
         translation={50}
         handleTouchStart={noop}

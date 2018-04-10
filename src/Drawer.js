@@ -8,6 +8,7 @@ class Drawer extends Component {
   static propTypes = {
     position: PropTypes.oneOf(["left", "right", "top", "bottom"]).isRequired,
     size: PropTypes.number.isRequired,
+    zIndex: PropTypes.number.isRequired,
     children: PropTypes.func.isRequired,
   };
 
@@ -93,7 +94,7 @@ class Drawer extends Component {
   };
 
   render() {
-    const { position, size, children } = this.props;
+    const { position, size, children, zIndex } = this.props;
     const { swiping, translation } = this.state;
 
     return children({
@@ -101,6 +102,7 @@ class Drawer extends Component {
       size,
       swiping,
       translation,
+      zIndex,
       mainContentScroll: this.mainContentScroll,
       toggleDrawer: this.toggleDrawer,
       handleTouchStart: this.handleTouchStart,

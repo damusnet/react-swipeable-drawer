@@ -37,7 +37,7 @@ exports[`<DrawerContainer /> renders correctly 1`] = `
         "transform": "translateX(0%)",
         "transition": "transform .2s ease-in-out",
         "width": "80%",
-        "zIndex": 1,
+        "zIndex": 2,
       }
     }
   >

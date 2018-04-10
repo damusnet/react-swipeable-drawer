@@ -6,6 +6,7 @@ import { DrawerOverlay, DrawerContentContainer } from "./Drawer";
 const DrawerContainer = ({
   position,
   size,
+  zIndex,
   swiping,
   translation,
   toggleDrawer,
@@ -20,6 +21,7 @@ const DrawerContainer = ({
     <div className="DrawerContainer">
       <DrawerOverlay
         position={position}
+        zIndex={zIndex}
         open={open}
         swiping={swiping}
         translation={translation}
@@ -31,6 +33,7 @@ const DrawerContainer = ({
       <DrawerContentContainer
         position={position}
         size={size}
+        zIndex={zIndex + 1}
         swiping={swiping}
         translation={translation}
         toggleDrawer={toggleDrawer}
@@ -48,6 +51,7 @@ export default DrawerContainer;
 DrawerContainer.propTypes = {
   position: PropTypes.oneOf(["left", "right", "top", "bottom"]).isRequired,
   size: PropTypes.number.isRequired,
+  zIndex: PropTypes.number.isRequired,
   swiping: PropTypes.bool.isRequired,
   translation: PropTypes.number.isRequired,
   toggleDrawer: PropTypes.func.isRequired,

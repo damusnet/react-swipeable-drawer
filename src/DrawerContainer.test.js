@@ -11,6 +11,7 @@ describe("<DrawerContainer />", () => {
       <DrawerContainer
         position="left"
         size={80}
+        zIndex={1}
         swiping={false}
         translation={0}
         toggleDrawer={noop}
