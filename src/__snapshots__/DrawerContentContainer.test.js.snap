@@ -15,7 +15,7 @@ exports[`<DrawerContentContainer /> renders correctly when closed 1`] = `
       "transform": "translateX(0%)",
       "transition": "transform .2s ease-in-out",
       "width": "80%",
-      "zIndex": 1,
+      "zIndex": 2,
     }
   }
 >
@@ -38,7 +38,7 @@ exports[`<DrawerContentContainer /> renders correctly when swiping down 1`] = `
       "top": "-80%",
       "transform": "translateY(50%)",
       "transition": "",
-      "zIndex": 1,
+      "zIndex": 2,
     }
   }
 >
@@ -61,7 +61,7 @@ exports[`<DrawerContentContainer /> renders correctly when swiping left 1`] = `
       "transform": "translateX(-50%)",
       "transition": "",
       "width": "80%",
-      "zIndex": 1,
+      "zIndex": 2,
     }
   }
 >
@@ -84,7 +84,7 @@ exports[`<DrawerContentContainer /> renders correctly when swiping right 1`] = `
       "transform": "translateX(50%)",
       "transition": "",
       "width": "80%",
-      "zIndex": 1,
+      "zIndex": 2,
     }
   }
 >
@@ -107,7 +107,7 @@ exports[`<DrawerContentContainer /> renders correctly when up 1`] = `
       "right": 0,
       "transform": "translateY(-50%)",
       "transition": "",
-      "zIndex": 1,
+      "zIndex": 2,
     }
   }
 >

@@ -19,6 +19,7 @@ describe("<DrawerOverlay />", () => {
           handleTouchStart={noop}
           handleTouchMove={noop}
           handleTouchEnd={noop}
+          style={{ zIndex: 1 }}
         />
       );
       const tree = component.toJSON();
@@ -36,6 +37,7 @@ describe("<DrawerOverlay />", () => {
           handleTouchStart={noop}
           handleTouchMove={noop}
           handleTouchEnd={noop}
+          style={{ zIndex: 1 }}
         />
       );
       const tree = component.toJSON();
@@ -54,6 +56,7 @@ describe("<DrawerOverlay />", () => {
         handleTouchStart={noop}
         handleTouchMove={noop}
         handleTouchEnd={noop}
+        style={{ zIndex: 1 }}
       />
     );
     const tree = component.toJSON();

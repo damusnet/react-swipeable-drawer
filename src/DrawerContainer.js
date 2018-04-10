@@ -13,6 +13,8 @@ const DrawerContainer = ({
   handleTouchMove,
   handleTouchEnd,
   drawerContent,
+  overlayStyle,
+  contentStyle,
 }) => {
   const open = translation > 0;
 
@@ -27,6 +29,7 @@ const DrawerContainer = ({
         handleTouchStart={handleTouchStart}
         handleTouchMove={handleTouchMove}
         handleTouchEnd={handleTouchEnd}
+        style={overlayStyle}
       />
       <DrawerContentContainer
         position={position}
@@ -38,6 +41,7 @@ const DrawerContainer = ({
         handleTouchMove={handleTouchMove}
         handleTouchEnd={handleTouchEnd}
         drawerContent={drawerContent}
+        style={contentStyle}
       />
     </div>
   );
@@ -55,4 +59,11 @@ DrawerContainer.propTypes = {
   handleTouchMove: PropTypes.func.isRequired,
   handleTouchEnd: PropTypes.func.isRequired,
   drawerContent: PropTypes.element.isRequired,
+  overlayStyle: PropTypes.object,
+  contentStyle: PropTypes.object,
+};
+
+DrawerContainer.defaultProps = {
+  overlayStyle: {},
+  contentStyle: {},
 };

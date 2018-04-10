@@ -54,6 +54,7 @@ const DrawerOverlay = ({
   handleTouchStart,
   handleTouchMove,
   handleTouchEnd,
+  style,
 }) => (
   <div
     className="DrawerOverlay"
@@ -67,6 +68,7 @@ const DrawerOverlay = ({
       backgroundColor: `rgba(0,0,0,${0.6 * translation / 100})`,
       transition: transition({ swiping, open }),
       ...transform({ position, swiping, open }),
+      ...style,
     }}
   />
 );
@@ -82,4 +84,5 @@ DrawerOverlay.propTypes = {
   handleTouchStart: PropTypes.func.isRequired,
   handleTouchMove: PropTypes.func.isRequired,
   handleTouchEnd: PropTypes.func.isRequired,
+  style: PropTypes.object.isRequired,
 };

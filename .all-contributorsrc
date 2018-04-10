@@ -20,6 +20,16 @@
         "ideas",
         "tool"
       ]
+    },
+    {
+      "login": "ooHmartY",
+      "name": "Oscar Martinez",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2343630?v=4",
+      "profile": "http://mtnz-web.com",
+      "contributions": [
+        "code"
+      ]
     }
-  ]
+  ],
+  "repoType": "github"
 }
