@@ -7,6 +7,8 @@ const MainContentContainer = ({ translation, mainContentScroll, children }) => {
       ? {
           position: "fixed",
           top: -mainContentScroll,
+          left: 0,
+          right: 0,
         }
       : {};
 
