@@ -12,6 +12,7 @@ describe("<DrawerOverlay />", () => {
       const component = renderer.create(
         <DrawerOverlay
           position={position}
+          style={{ zIndex: 1 }}
           open={false}
           swiping={false}
           translation={0}
@@ -29,6 +30,7 @@ describe("<DrawerOverlay />", () => {
       const component = renderer.create(
         <DrawerOverlay
           position={position}
+          style={{ zIndex: 1 }}
           open
           swiping={false}
           translation={100}
@@ -47,6 +49,7 @@ describe("<DrawerOverlay />", () => {
     const component = renderer.create(
       <DrawerOverlay
         position="left"
+        style={{ zIndex: 1 }}
         open={false}
         swiping
         translation={50}

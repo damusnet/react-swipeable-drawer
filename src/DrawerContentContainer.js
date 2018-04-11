@@ -42,6 +42,7 @@ const transform = ({ position, size, translation }) => {
 const DrawerContentContainer = ({
   position,
   size,
+  style,
   swiping,
   translation,
   handleTouchStart,
@@ -56,9 +57,9 @@ const DrawerContentContainer = ({
     onTouchEnd={handleTouchEnd}
     style={{
       position: "fixed",
-      zIndex: 1,
       transition: swiping ? "" : "transform .2s ease-in-out",
       ...transform({ position, size, translation }),
+      ...style,
     }}
   >
     {drawerContent}
@@ -70,6 +71,7 @@ export default DrawerContentContainer;
 DrawerContentContainer.propTypes = {
   position: PropTypes.oneOf(["left", "right", "top", "bottom"]).isRequired,
   size: PropTypes.number.isRequired,
+  style: PropTypes.object.isRequired, // eslint-disable-line
   swiping: PropTypes.bool.isRequired,
   translation: PropTypes.number.isRequired,
   handleTouchStart: PropTypes.func.isRequired,

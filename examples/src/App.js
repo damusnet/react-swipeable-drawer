@@ -29,6 +29,8 @@ const App = () => (
         <DrawerContainer
           position={position}
           size={size}
+          overlayStyle={{ zIndex: 1 }}
+          contentStyle={{ zIndex: 2 }}
           swiping={swiping}
           translation={translation}
           toggleDrawer={toggleDrawer}
