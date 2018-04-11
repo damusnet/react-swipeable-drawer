@@ -8,7 +8,7 @@ const noop = () => <div />;
 describe("<Drawer />", () => {
   it("toggles open", () => {
     const drawer = shallow(
-      <Drawer size={80} position="left" zIndex={1}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();
@@ -20,7 +20,7 @@ describe("<Drawer />", () => {
 
   it("toggles close", () => {
     const drawer = shallow(
-      <Drawer size={80} position="left" zIndex={1}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();
@@ -33,7 +33,7 @@ describe("<Drawer />", () => {
 
   it("swipes horizontally", () => {
     const drawer = shallow(
-      <Drawer size={80} position="left" zIndex={1}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();
@@ -51,7 +51,7 @@ describe("<Drawer />", () => {
 
   it("scrolls vertically", () => {
     const drawer = shallow(
-      <Drawer size={80} position="left" zIndex={1}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();
@@ -75,7 +75,7 @@ describe("<Drawer />", () => {
 
   it("closes when swiping a little", () => {
     const drawer = shallow(
-      <Drawer size={80} position="left" zIndex={1}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();
@@ -95,7 +95,7 @@ describe("<Drawer />", () => {
 
   it("opens when swiping enough from left to right", () => {
     const drawer = shallow(
-      <Drawer size={80} position="left" zIndex={1}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();
@@ -115,7 +115,7 @@ describe("<Drawer />", () => {
 
   it("opens when swiping enough from right to left", () => {
     const drawer = shallow(
-      <Drawer size={80} position="right" zIndex={1}>
+      <Drawer size={80} position="right">
         {noop}
       </Drawer>
     ).instance();
@@ -138,7 +138,7 @@ describe("<Drawer />", () => {
     window.pageYOffset = 100;
 
     const drawer = mount(
-      <Drawer size={80} position="left" zIndex={1}>
+      <Drawer size={80} position="left">
         {noop}
       </Drawer>
     ).instance();

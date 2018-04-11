@@ -47,7 +47,7 @@ const transition = ({ swiping, open }) => {
 
 const DrawerOverlay = ({
   position,
-  zIndex,
+  style,
   open,
   swiping,
   translation,
@@ -64,10 +64,10 @@ const DrawerOverlay = ({
     onTouchEnd={handleTouchEnd}
     style={{
       position: "fixed",
-      zIndex,
       backgroundColor: `rgba(0,0,0,${0.6 * translation / 100})`,
       transition: transition({ swiping, open }),
       ...transform({ position, swiping, open }),
+      ...style,
     }}
   />
 );
@@ -76,7 +76,7 @@ export default DrawerOverlay;
 
 DrawerOverlay.propTypes = {
   position: PropTypes.oneOf(["left", "right", "top", "bottom"]).isRequired,
-  zIndex: PropTypes.number.isRequired,
+  style: PropTypes.object.isRequired, // eslint-disable-line
   open: PropTypes.bool.isRequired,
   swiping: PropTypes.bool.isRequired,
   translation: PropTypes.number.isRequired,

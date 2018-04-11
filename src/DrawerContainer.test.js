@@ -11,7 +11,8 @@ describe("<DrawerContainer />", () => {
       <DrawerContainer
         position="left"
         size={80}
-        zIndex={1}
+        overlayStyle={{ zIndex: 1 }}
+        contentStyle={{ zIndex: 2 }}
         swiping={false}
         translation={0}
         toggleDrawer={noop}
