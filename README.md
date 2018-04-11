@@ -65,10 +65,11 @@ import DrawerContent from "./DrawerContent";
 import MainContent from "./MainContent";
 
 const App = () => (
-  <Drawer position="left" size={80}>
+  <Drawer position="left" size={80} zIndex={1}>
     {({
       position,
       size,
+      zIndex,
       swiping,
       translation,
       mainContentScroll,
@@ -81,6 +82,7 @@ const App = () => (
         <DrawerContainer
           position={position}
           size={size}
+          zIndex={zIndex}
           swiping={swiping}
           translation={translation}
           toggleDrawer={toggleDrawer}
@@ -125,11 +127,9 @@ Due to the fact that Safari on iOS interprets a swipe from the left as a navigat
 Thanks goes to these people ([emoji key][emojis]):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-
-| [<img src="https://avatars.githubusercontent.com/u/433409" width="100px;"/><br /><sub>Damien Varron</sub>](https://github.com/damusnet)<br />[💻](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Code") [📖](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Documentation") [🚇](#infra-damusnet "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Tests") [🤔](#ideas-damusnet "Ideas, Planning, & Feedback") [🔧](#tool-damusnet "Tools") |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-
-
+<!-- prettier-ignore -->
+| [<img src="https://avatars.githubusercontent.com/u/433409" width="100px;"/><br /><sub><b>Damien Varron</b></sub>](https://github.com/damusnet)<br />[💻](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Code") [📖](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Documentation") [🚇](#infra-damusnet "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Tests") [🤔](#ideas-damusnet "Ideas, Planning, & Feedback") [🔧](#tool-damusnet "Tools") | [<img src="https://avatars2.githubusercontent.com/u/2343630?v=4" width="100px;"/><br /><sub><b>Oscar Martinez</b></sub>](http://mtnz-web.com)<br />[💻](https://github.com/damusnet/react-swipeable-drawer/commits?author=ooHmartY "Code") |
+| :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors][all-contributors] specification.
