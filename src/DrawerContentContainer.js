@@ -48,6 +48,7 @@ const DrawerContentContainer = ({
   handleTouchMove,
   handleTouchEnd,
   drawerContent,
+  style,
 }) => (
   <div
     className="DrawerContentContainer"
@@ -59,6 +60,7 @@ const DrawerContentContainer = ({
       zIndex: 1,
       transition: swiping ? "" : "transform .2s ease-in-out",
       ...transform({ position, size, translation }),
+      ...style,
     }}
   >
     {drawerContent}
@@ -76,4 +78,5 @@ DrawerContentContainer.propTypes = {
   handleTouchMove: PropTypes.func.isRequired,
   handleTouchEnd: PropTypes.func.isRequired,
   drawerContent: PropTypes.element.isRequired,
+  style: PropTypes.object.isRequired,
 };

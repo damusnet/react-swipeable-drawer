@@ -107,8 +107,17 @@ Alternatively, you can look at the code for [`<DrawerOverlay />`](./src/DrawerOv
 
 ### Props
 
+#### Drawer
+
 * `size` (integer): size (width or height) in percent (%) of the drawer
 * `position` (string): one of `left`, `right`, `top` or `bottom`
+
+#### DrawerContainer
+
+`<DrawerContainer />` requires all the props passed down by the `<Drawer />` render function. It also accepts two optionnal props:
+
+* `overlayStyle` (object): overrides the `<DrawerOverlay />` style
+* `contentStyle` (object): overrides the `<DrawerContentContainer />` style
 
 ## Known limitations
 
@@ -126,9 +135,9 @@ Thanks goes to these people ([emoji key][emojis]):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 
-| [<img src="https://avatars.githubusercontent.com/u/433409" width="100px;"/><br /><sub>Damien Varron</sub>](https://github.com/damusnet)<br />[💻](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Code") [📖](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Documentation") [🚇](#infra-damusnet "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Tests") [🤔](#ideas-damusnet "Ideas, Planning, & Feedback") [🔧](#tool-damusnet "Tools") |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-
+<!-- prettier-ignore -->
+| [<img src="https://avatars.githubusercontent.com/u/433409" width="100px;"/><br /><sub><b>Damien Varron</b></sub>](https://github.com/damusnet)<br />[💻](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Code") [📖](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Documentation") [🚇](#infra-damusnet "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/damusnet/react-swipeable-drawer/commits?author=damusnet "Tests") [🤔](#ideas-damusnet "Ideas, Planning, & Feedback") [🔧](#tool-damusnet "Tools") | [<img src="https://avatars2.githubusercontent.com/u/2343630?v=4" width="100px;"/><br /><sub><b>Oscar Martinez</b></sub>](http://mtnz-web.com)<br />[💻](https://github.com/damusnet/react-swipeable-drawer/commits?author=ooHmartY "Code") |
+| :---: | :---: |
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 

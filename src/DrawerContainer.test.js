@@ -18,6 +18,8 @@ describe("<DrawerContainer />", () => {
         handleTouchMove={noop}
         handleTouchEnd={noop}
         drawerContent={<div />}
+        overlayStyle={{ zIndex: 1 }}
+        contentStyle={{ zIndex: 2 }}
       />
     );
     const tree = component.toJSON();

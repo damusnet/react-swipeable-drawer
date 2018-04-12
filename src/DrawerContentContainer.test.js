@@ -17,6 +17,7 @@ describe("<DrawerContentContainer />", () => {
         handleTouchMove={noop}
         handleTouchEnd={noop}
         drawerContent={<div />}
+        style={{ zIndex: 2 }}
       />
     );
     const tree = component.toJSON();
@@ -34,6 +35,7 @@ describe("<DrawerContentContainer />", () => {
         handleTouchMove={noop}
         handleTouchEnd={noop}
         drawerContent={<div />}
+        style={{ zIndex: 2 }}
       />
     );
     const tree = component.toJSON();
@@ -51,6 +53,7 @@ describe("<DrawerContentContainer />", () => {
         handleTouchMove={noop}
         handleTouchEnd={noop}
         drawerContent={<div />}
+        style={{ zIndex: 2 }}
       />
     );
     const tree = component.toJSON();
@@ -68,6 +71,7 @@ describe("<DrawerContentContainer />", () => {
         handleTouchMove={noop}
         handleTouchEnd={noop}
         drawerContent={<div />}
+        style={{ zIndex: 2 }}
       />
     );
     const tree = component.toJSON();
@@ -85,6 +89,7 @@ describe("<DrawerContentContainer />", () => {
         handleTouchMove={noop}
         handleTouchEnd={noop}
         drawerContent={<div />}
+        style={{ zIndex: 2 }}
       />
     );
     const tree = component.toJSON();
