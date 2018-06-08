@@ -25,7 +25,7 @@
     "react": ">=15"
   },
   "devDependencies": {
-    "all-contributors-cli": "^4.11.1",
+    "all-contributors-cli": "^5.0.0",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^8.2.2",
     "babel-jest": "^22.1.0",
