@@ -95,8 +95,11 @@ class Drawer extends Component {
   render() {
     const { position, size, children } = this.props;
     const { swiping, translation } = this.state;
+    const func = Array.isArray(children)
+      ? /* istanbul ignore next (preact) */ children[0]
+      : children;
 
-    return children({
+    return func({
       position,
       size,
       swiping,
